@@ -1,12 +1,21 @@
 {% load staticfiles %}
 {% load static %}
 <br>
-<a href="accounts/register"> Регистрация </a>
+{% if user.is_authenticated %}
+<a href="accounts/logout"> Выход </a><br><br>
+<span>Приветствую тебя,  <li>{{ user.username }} </li></span><br><br>
+{% else %}
+<a href="accounts/register"> Регистрация </a><br><br>
+<a href="accounts/login"> Логин </a>
 <br><br><br>
+{% endif %}
 тест
 
 {% block dom %}
 {% endblock %}
 <br>
 {% block register %}
+{% endblock %}
+<br>
+{% block login %}
 {% endblock %}
