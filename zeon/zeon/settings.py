@@ -32,10 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
-<<<<<<< HEAD
     'accounts.apps.AccountsConfig',
-=======
->>>>>>> bff963650052efeb23b401daf134fb717e539f90
+    'sero.apps.SeroConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,8 +44,6 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
 
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
