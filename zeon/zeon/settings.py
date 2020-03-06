@@ -33,7 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'accounts.apps.AccountsConfig',
+<<<<<<< HEAD
     'sero.apps.SeroConfig',
+=======
+>>>>>>> 55aa9b47143832b2386e20a8c60c64f8ae032bea
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

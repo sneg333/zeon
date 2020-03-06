@@ -49,4 +49,8 @@ def register(request):
 
 def logout(request):
     auth.logout(request)
+<<<<<<< HEAD
     return redirect('/')
+=======
+    return redirect('/')
+>>>>>>> 55aa9b47143832b2386e20a8c60c64f8ae032bea
