@@ -4,12 +4,13 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    url(r'', include('polls.urls')),
-    url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^sero/', include('sero.urls')),
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^admin/', admin.site.urls),
 
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    # url(r'', include('polls.urls')),
+    # url(r'^accounts/', include('accounts.urls')),
 ]
 
 if settings.DEBUG:

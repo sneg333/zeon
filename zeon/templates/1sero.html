@@ -10,6 +10,7 @@
     <input type="mail" name="user_mail" placeholder="user_mail"><br>
     <input type="password" name="password1" placeholder="Password"><br>
     <input type="password" name="password2" placeholder="Confirm Password"><br>
+
     <input type="Submit">
 
 </form>
@@ -22,5 +23,15 @@
     {% endfor %}
 </div>
 
+{% for useron in useron %}
+<ul>
+<!--    <img src="{{ useron.user_image.url }}" width="15%"><br>-->
+    <p>
+        name - {{ useron.user_name }}
+        <br><br>
+</ul>
+{% endfor %}
+
 {% endblock %}
+
 
