@@ -1,21 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
-def login(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-
-        user = auth.authenticate(username=username, password=password)
-        if user is not None:
-            auth.login(request, user)
-            return redirect("/")
-        else:
-            messages.info(request, 'invalid credentails')
-            return redirect('login')
-    else:
-        return render(request, 'login.html')
 
 def register(request):
 
@@ -38,7 +25,7 @@ def register(request):
                 user = User.objects.create_user(username=username, password=password1, email=email, first_name=first_name, last_name=last_name)
                 user.save();
                 print('user created')
-                return redirect('login')
+
         else:
             messages.info(request, 'password not match')
             return redirect('register')
@@ -46,11 +33,3 @@ def register(request):
 
     else:
         return render(request, 'register.html')
-
-def logout(request):
-    auth.logout(request)
-<<<<<<< HEAD
-    return redirect('/')
-=======
-    return redirect('/')
->>>>>>> 55aa9b47143832b2386e20a8c60c64f8ae032bea

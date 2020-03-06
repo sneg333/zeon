@@ -12,9 +12,3 @@ body{
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
-ul.errorlist{
-    color: red;
-    list-style: none;
-    font-size: 12px;
-}
