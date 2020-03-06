@@ -3,11 +3,15 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = [
+
     url(r'', include('polls.urls')),
-    #url(r'', include('accounts.urls')),
+    #url(r'^accounts/', include('accounts.urls')),
+    url('accounts/', include('django.contrib.auth.urls')),
+    url(r'^sero/', include('sero.urls')),
+    url(r'^socionetwork/', include('socionetwork.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('accounts.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
 ]

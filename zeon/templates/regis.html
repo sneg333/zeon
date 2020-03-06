@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+</head>
+<body>
+<div id="header">
+    <span class="logo">Bookmarks</span>
+</div>
+<div id="content">
+    {% block content %}
+      <ul class="sidebar-nav">
+
+          <h3>наш сайт название, логотип тел и тд</h3>
+
+   {% if user.is_authenticated %}
+
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">выход</a></li> <br>
+
+          <h3> добро пожаловать в личный кабинет<br> этот текст вдиен только тем кто зарегистрирован</h3>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">вход</a></li>
+   {% endif %}
+  </ul>
+    {% endblock %}
+</div>
+</body>
+</html>
