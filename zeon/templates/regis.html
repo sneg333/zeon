@@ -17,7 +17,15 @@
 
    {% if user.is_authenticated %}
 
-     <li>User: {{ user.get_username }}</li>
+     <li>пользователь: {{ user.get_username }}</li>
+          <li>пользователь: {{ user.first_name }}</li>
+          <li>пользователь: {{ user.last_name }}</li>
+          <li>пользователь: {{ user.email }}</li>
+
+          <li> о себе: {{ user.profile.about }}</li>
+          <li> пол: {{ user.profile.pol }}</li>
+          <li> статус отношений: {{ user.profile.statstar }}</li>
+
      <li><a href="{% url 'logout'%}?next={{request.path}}">выход</a></li> <br>
 
           <h3> добро пожаловать в личный кабинет<br> этот текст вдиен только тем кто зарегистрирован</h3>

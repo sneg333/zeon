@@ -10,7 +10,3 @@ def home(request):
         'sobitie': sobitie,
     }
     return render(request,'polls/home.html', context)
-
-
-
-

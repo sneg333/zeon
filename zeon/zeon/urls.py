@@ -3,7 +3,6 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 
-
 urlpatterns = [
 
     url(r'', include('polls.urls')),
@@ -13,6 +12,7 @@ urlpatterns = [
     url(r'^socionetwork/', include('socionetwork.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
 
 ]
 
